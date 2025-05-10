@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+
+.base-apparel {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: hsl(0, 0%, 98%);
+    color: var(--Dark-Grayish-Red);
+  }
+
+  .container {
+    padding: 1rem;
+    min-height: 100vh;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .card__logo {
+      padding: 32px;
+      overflow: hidden;
+
+      img {
+        max-width: 35%;
+      }
+    }
+
+    .card__image {
+      overflow: hidden;
+
+      img {
+        max-width: 100%;
+      }
+    }
+
+    .card__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .card__title {
+      font-size: 2.5em;
+      text-transform: uppercase;
+      margin: 0 auto;
+      letter-spacing: 10px;
+      color: var(--Dark-Grayish-Red);
+      font-weight: 600;
+
+      span {
+        color: var(--Desaturated-Red);
+        font-weight: 300;
+      }
+    }
+
+    .card__text {
+      line-height: 1.5;
+      margin: 0 auto;
+      font-size: 0.9em;
+      font-weight: 400;
+      color: var(--Desaturated-Red);
+      padding: 16px 0 32px;
+    }
+
+    .card__form {
+      position: relative;
+
+      input {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+        padding: 16px 24px;
+        border-radius: 40px;
+        outline: 0;
+        color: var(--Desaturated-Red);
+        border: 1px solid var(--Desaturated-Red);
+
+        &::placeholder {
+          color: var(--Desaturated-Red);
+          font-family: "Josefin Sans";
+          opacity: 0.75;
+        }
+      }
+
+      .form__submit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 70px;
+        height: 100%;
+        color: white;
+        border: solid 0px transparent;
+        border-radius: 30px;
+        background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        box-shadow: 0 20px 20px hsla(0, 93%, 68%, 20%);
+        cursor: pointer;
+
+        &:hover {
+          background-image: linear-gradient(135deg, hsl(0, 0%, 75%), hsl(0, 80%, 86%));
+        }
+      }
+
+      .error__icon {
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        right: 70px;
+        transform: translate(-50%, -50%);
+        transition: 0.3s;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+
+      .error__text {
+        opacity: 0;
+        position: absolute;
+        bottom: -25px;
+        left: 10px;
+        color: var(--Desaturated-Red);
+        font-size: 0.9em;
+        transition: 0.3s;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .base-apparel {
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      max-width: 1400px;
+      height: 800px;
+      display: grid;
+      grid-template-columns: 55% 45%;
+      grid-template-rows: auto;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      background-color: white;
+
+      .card__logo {
+        padding: 80px 0 0 120px;
+        text-align: left;
+
+        img {
+          max-width: 100%;
+        }
+      }
+
+      .card__body {
+        padding: 40px 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+
+        .card__title {
+          font-size: 4.5em;
+          margin: 0;
+        }
+
+        .card__text {
+          font-size: 1.1em;
+          margin: 0 0 2rem 0;
+        }
+      }
+
+      .card__image {
+        grid-column: 2/3;
+        grid-row: 1 / 3;
+        height: 100%;
+
+        img {
+          content: url(./images/hero-desktop.jpg);
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+
+      .card__form {
+        width: 100%;
+        max-width: 450px;
+
+        input {
+          width: 100%;
+          max-width: 100%;
+          margin: 0;
+        }
+      }
+
+      .form__submit {
+        width: 100px;
+      }
+
+      .error__icon {
+        right: 100px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .base-apparel {
+    .container {
+      display: block;
+      padding: 0;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      box-shadow: none;
+      background-color: transparent;
+
+      .card__logo {
+        padding: 2rem;
+        text-align: center;
+
+        img {
+          max-width: 150px;
+        }
+      }
+
+      .card__image {
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+
+      .card__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .card__title {
+          font-size: 2.2em;
+          margin-top: 1rem;
+          text-align: center;
+          justify-content: center;
+        }
+
+        .card__text {
+          font-size: 0.95em;
+          max-width: 90%;
+        }
+
+        .card__form {
+          width: 100%;
+          max-width: 90%;
+          margin-bottom: 2rem;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

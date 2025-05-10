@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base Apparel | Coming Soon</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="base-apparel">
+  <div class="container">
+    <main class="card">
+      
+      <header class="card__logo">
+        <img src="./images/logo.svg" alt="Base Apparel Logo" />
+      </header>
+
+      <div class="card__image">
+        <picture>
+          <source media="(min-width: 768px)" srcset="./images/hero-desktop.jpg" />
+          <img src="./images/hero-mobile.jpg" alt="Fashion model" />
+        </picture>
+      </div>
+
+      <section class="card__body">
+        <h1 class="card__title"><span>We're</span> coming soon</h1>
+
+        <p class="card__text">
+          Hello fellow shoppers! We're currently building our new fashion store. 
+          Add your email below to stay up-to-date with announcements and our launch deals.
+        </p>
+
+        <form class="card__form" novalidate>
+          <input type="email" placeholder="Email Address" aria-label="Email Address" required />
+          <button type="submit" class="form__submit" aria-label="Submit email">
+            <img src="./images/icon-arrow.svg" alt="" aria-hidden="true" />
+          </button>
+          <img class="error__icon" src="./images/icon-error.svg" alt="Error icon" />
+          <p class="error__text">Please enter a valid email!</p>
+        </form>
+      </section>
+
+    </main>
+  </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
